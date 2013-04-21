@@ -1,0 +1,1 @@
+{"ts":1366583785735,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"class ContentController < ApplicationController\n  def silver\n  end\n\n  def gold\n  end\n\n  def platinum\n  end\nend\n"]],"start1":0,"start2":0,"length1":0,"length2":111}]],"length":111}

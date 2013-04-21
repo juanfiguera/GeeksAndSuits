@@ -1,0 +1,2 @@
+{"ts":1366579815417,"silentsave":true,"restoring":false,"patch":[[]],"length":0}
+{"contributors":[],"silentsave":false,"ts":1366579846173,"patch":[[{"diffs":[[1,"FactoryGirl.define do\n  factory :role do\n    name 'admin'\n  end\nend"]],"start1":0,"start2":0,"length1":0,"length2":67}]],"length":67,"saved":false}

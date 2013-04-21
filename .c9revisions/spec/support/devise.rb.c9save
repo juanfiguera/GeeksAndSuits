@@ -1,0 +1,1 @@
+{"ts":1366579989813,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"RSpec.configure do |config|\n  config.include Devise::TestHelpers, :type => :controller\nend\n"]],"start1":0,"start2":0,"length1":0,"length2":91}]],"length":91}

@@ -1,0 +1,2 @@
+{"ts":1366580482680,"silentsave":true,"restoring":false,"patch":[[]],"length":0}
+{"contributors":[],"silentsave":false,"ts":1366580492738,"patch":[[{"diffs":[[1,"Stripe.api_key = ENV[\"STRIPE_API_KEY\"]\nSTRIPE_PUBLIC_KEY = ENV[\"STRIPE_PUBLIC_KEY\"]"]],"start1":0,"start2":0,"length1":0,"length2":83}]],"length":83,"saved":false}

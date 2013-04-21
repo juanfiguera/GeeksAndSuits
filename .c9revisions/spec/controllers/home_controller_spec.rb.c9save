@@ -1,0 +1,1 @@
+{"ts":1366579647040,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"require 'spec_helper'\n\ndescribe HomeController do\n\n  describe \"GET 'index'\" do\n    it \"should be successful\" do\n      get 'index'\n      response.should be_success\n    end\n  end\n\nend\n"]],"start1":0,"start2":0,"length1":0,"length2":182}]],"length":182}

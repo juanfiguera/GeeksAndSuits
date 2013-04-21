@@ -1,0 +1,2 @@
+{"ts":1366583021852,"silentsave":true,"restoring":false,"patch":[[]],"length":0}
+{"contributors":[],"silentsave":false,"ts":1366583034655,"patch":[[{"diffs":[[1,".plans{\n  text-align: center;\n}\n.featured{\n  -webkit-transform:scale(1.15);\n  box-shadow: 0 0 30px rgba(0, 0, 0, 0.67);\n}\n.plan{\n  background-color: #111575;\n}\n.plan.featured-plan{\n  background-color: #CCAB00;\n}\n.plan h2{\n  line-height: 100px;\n  color: #fff;\n}"]],"start1":0,"start2":0,"length1":0,"length2":260}]],"length":260,"saved":false}

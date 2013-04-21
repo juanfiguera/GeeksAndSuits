@@ -1,0 +1,3 @@
+{"ts":1366583218661,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"class HomeController < ApplicationController\n  def index\n    @users = User.all\n  end\nend\n"]],"start1":0,"start2":0,"length1":0,"length2":89}]],"length":89}
+{"contributors":[],"silentsave":false,"ts":1366583225239,"patch":[[{"diffs":[[0,"ler\n"],[-1,"  def index\n    @users = User.all\n  end"],[0,"\nend"]],"start1":41,"start2":41,"length1":47,"length2":8}]],"length":50,"saved":false}
+{"ts":1366583227535,"patch":[[{"diffs":[[0,"troller\n"],[-1,"\n"],[0,"end\n"]],"start1":37,"start2":37,"length1":13,"length2":12}]],"length":49,"saved":false}

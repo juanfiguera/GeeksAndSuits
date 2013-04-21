@@ -824,3 +824,77 @@ Processing by HomeController#index as HTML
   Rendered layouts/_navigation.html.erb (4.0ms)
   Rendered layouts/_messages.html.erb (0.2ms)
 Completed 200 OK in 765ms (Views: 764.9ms | ActiveRecord: 0.3ms)
+Connecting to database specified by database.yml
+
+
+Started DELETE "/users/sign_out" for 127.12.93.129 at 2013-04-21 19:44:40 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JyaMJQPaTtO3N2yAKAfyfuQM/JqXgZ6hV40djkglifA="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://project-livec945710bde43.rhcloud.com:8000/
+Completed 302 Found in 808ms (ActiveRecord: 8.6ms)
+
+
+Started GET "/" for 127.12.93.129 at 2013-04-21 19:44:41 -0400
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (184.2ms)
+  Rendered layouts/_navigation.html.erb (2.1ms)
+  Rendered layouts/_messages.html.erb (0.7ms)
+Completed 200 OK in 1807ms (Views: 1806.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.12.93.129 at 2013-04-21 19:44:46 -0400
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 617ms (Views: 616.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up?plan=silver" for 127.12.93.129 at 2013-04-21 19:44:51 -0400
+Processing by RegistrationsController#new as HTML
+  Parameters: {"plan"=>"silver"}
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE "roles"."name" = 'silver' AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL LIMIT 1
+  [1m[36mRole Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" IS NULL AND "roles"."id" = 2 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT "roles".id FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" IS NULL
+  [1m[36mRole Load (7.6ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE "roles"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered devise/registrations/new.html.erb within layouts/application (1498.9ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 3121ms (Views: 2305.4ms | ActiveRecord: 8.9ms)
+
+
+Started POST "/users" for 127.12.93.129 at 2013-04-21 19:45:16 -0400
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"usPYAjq5OH8ykCzwfV7j9LQTSLw9hmOYCdUQkoReLnU=", "plan"=>"silver", "user"=>{"name"=>"Silver Plan", "email"=>"silver@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35mRole Load (0.4ms)[0m  SELECT "roles".* FROM "roles" WHERE "roles"."name" = 'silver' AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL LIMIT 1
+  [1m[36mRole Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" IS NULL AND "roles"."id" = 2 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT "roles".id FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" IS NULL
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE "roles"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'silver@example.com' LIMIT 1[0m
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[35mSQL (10.1ms)[0m  INSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "customer_id", "email", "encrypted_password", "last_4_digits", "last_sign_in_at", "last_sign_in_ip", "name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Sun, 21 Apr 2013 23:45:17 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["customer_id", nil], ["email", "silver@example.com"], ["encrypted_password", "$2a$10$hM0S/7jZ9pPrD9VMATLssulJyLovlxIvXa20XWNZnkueIruDdr3S."], ["last_4_digits", nil], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "Silver Plan"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Sun, 21 Apr 2013 23:45:17 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "users_roles" ("user_id", "role_id") VALUES (6, 2)[0m
+  [1m[35m (7.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (3.2ms)[0m  UPDATE "users" SET "last_sign_in_at" = '2013-04-21 23:45:17.262176', "current_sign_in_at" = '2013-04-21 23:45:17.262176', "last_sign_in_ip" = '107.23.241.85', "current_sign_in_ip" = '107.23.241.85', "sign_in_count" = 1, "updated_at" = '2013-04-21 23:45:17.262984' WHERE "users"."id" = 6
+  [1m[36m (7.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://project-livec945710bde43.rhcloud.com:8000/content/silver
+Completed 302 Found in 691ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/content/silver" for 127.12.93.129 at 2013-04-21 19:45:17 -0400
+Processing by ContentController#silver as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 6 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 6 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 6 AND (((roles.name = 'silver') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 6 AND (((roles.name = 'gold') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 6 AND (((roles.name = 'platinum') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  Rendered content/silver.html.erb within layouts/application (0.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 6 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendered layouts/_navigation.html.erb (3.4ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 882ms (Views: 818.9ms | ActiveRecord: 1.2ms)

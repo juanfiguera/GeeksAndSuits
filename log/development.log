@@ -1,0 +1,114 @@
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (58.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (28.3ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (14.2ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (5.8ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to DeviseCreateUsers (20130421023143)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (2.2ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (3.7ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.3ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130421023143')[0m
+  [1m[35m (88.8ms)[0m  commit transaction
+Migrating to AddNameToUsers (20130421023212)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  ALTER TABLE "users" ADD "name" varchar(255)
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130421023212')[0m
+  [1m[35m (8.4ms)[0m  commit transaction
+Migrating to RolifyCreateRoles (20130421023311)
+  [1m[36m (0.9ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "resource_id" integer, "resource_type" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "users_roles" ("user_id" integer, "role_id" integer) [0m
+  [1m[35m (0.8ms)[0m  CREATE INDEX "index_roles_on_name" ON "roles" ("name")
+  [1m[36m (0.2ms)[0m  [1mCREATE INDEX "index_roles_on_name_and_resource_type_and_resource_id" ON "roles" ("name", "resource_type", "resource_id")[0m
+  [1m[35m (0.2ms)[0m  CREATE INDEX "index_users_roles_on_user_id_and_role_id" ON "users_roles" ("user_id", "role_id")
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130421023311')[0m
+  [1m[35m (15.7ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+  [1m[36m (74.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.4ms)[0m  select sqlite_version(*)
+  [1m[36m (11.6ms)[0m  [1mCREATE TABLE "roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "resource_id" integer, "resource_type" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (20.7ms)[0m  CREATE INDEX "index_roles_on_name_and_resource_type_and_resource_id" ON "roles" ("name", "resource_type", "resource_id")
+  [1m[36m (9.5ms)[0m  [1mCREATE INDEX "index_roles_on_name" ON "roles" ("name")[0m
+  [1m[35m (24.3ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "name" varchar(255)) 
+  [1m[36m (95.5ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (16.8ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (19.8ms)[0m  [1mCREATE TABLE "users_roles" ("user_id" integer, "role_id" integer) [0m
+  [1m[35m (13.4ms)[0m  CREATE INDEX "index_users_roles_on_user_id_and_role_id" ON "users_roles" ("user_id", "role_id")
+  [1m[36m (12.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (7.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (21.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130421023311')
+  [1m[36m (81.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130421023143')[0m
+  [1m[35m (16.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130421023212')
+Connecting to database specified by database.yml
+  [1m[36m (5.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35mRole Load (0.3ms)[0m  SELECT "roles".* FROM "roles" WHERE "roles"."name" = 'admin' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (21.2ms)[0m  INSERT INTO "roles" ("created_at", "name", "resource_id", "resource_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Sun, 21 Apr 2013 02:35:27 UTC +00:00], ["name", "admin"], ["resource_id", nil], ["resource_type", nil], ["updated_at", Sun, 21 Apr 2013 02:35:27 UTC +00:00]]
+  [1m[36m (10.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mRole Load (0.3ms)[0m  SELECT "roles".* FROM "roles" WHERE "roles"."name" = 'user' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "roles" ("created_at", "name", "resource_id", "resource_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Sun, 21 Apr 2013 02:35:27 UTC +00:00], ["name", "user"], ["resource_id", nil], ["resource_type", nil], ["updated_at", Sun, 21 Apr 2013 02:35:27 UTC +00:00]]
+  [1m[36m (7.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT "roles".* FROM "roles" WHERE "roles"."name" = 'VIP' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "roles" ("created_at", "name", "resource_id", "resource_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Sun, 21 Apr 2013 02:35:27 UTC +00:00], ["name", "VIP"], ["resource_id", nil], ["resource_type", nil], ["updated_at", Sun, 21 Apr 2013 02:35:27 UTC +00:00]]
+  [1m[36m (6.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'user@example.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT 1 AS one FROM "users" WHERE "users"."email" = 'user@example.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "users" ("created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "name", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Sun, 21 Apr 2013 02:35:27 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "user@example.com"], ["encrypted_password", "$2a$10$PN2.clh0C8GTVliu005ka.edLpaoeKWnoBRJzRja3Gtsl2cIiQot2"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["name", "First User"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["updated_at", Sun, 21 Apr 2013 02:35:27 UTC +00:00]]
+  [1m[35m (66.1ms)[0m  commit transaction
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" WHERE "roles"."name" = 'admin' AND "roles"."resource_type" IS NULL AND "roles"."resource_id" IS NULL LIMIT 1[0m
+  [1m[35mRole Exists (57.3ms)[0m  SELECT 1 AS one FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND "roles"."id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT "roles".id FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1[0m
+  [1m[35mRole Load (0.3ms)[0m  SELECT "roles".* FROM "roles" WHERE "roles"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "users_roles" ("user_id", "role_id") VALUES (1, 1)[0m
+  [1m[35m (7.9ms)[0m  commit transaction
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.12.93.129 at 2013-04-20 22:46:36 -0400
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  Rendered home/index.html.erb within layouts/application (77.8ms)
+Compiled bootstrap_and_overrides.css  (17996ms)  (pid 14106)
+Compiled home.css  (200ms)  (pid 14106)
+Compiled application.css  (18722ms)  (pid 14106)
+Compiled jquery.js  (2ms)  (pid 14106)
+Compiled jquery_ujs.js  (0ms)  (pid 14106)
+Compiled bootstrap-transition.js  (0ms)  (pid 14106)
+Compiled bootstrap-affix.js  (0ms)  (pid 14106)
+Compiled bootstrap-alert.js  (0ms)  (pid 14106)
+Compiled bootstrap-button.js  (0ms)  (pid 14106)
+Compiled bootstrap-carousel.js  (0ms)  (pid 14106)
+Compiled bootstrap-collapse.js  (0ms)  (pid 14106)
+Compiled bootstrap-dropdown.js  (2ms)  (pid 14106)
+Compiled bootstrap-modal.js  (0ms)  (pid 14106)
+Compiled bootstrap-scrollspy.js  (0ms)  (pid 14106)
+Compiled bootstrap-tab.js  (0ms)  (pid 14106)
+Compiled bootstrap-tooltip.js  (0ms)  (pid 14106)
+Compiled bootstrap-popover.js  (0ms)  (pid 14106)
+Compiled bootstrap-typeahead.js  (0ms)  (pid 14106)
+Compiled bootstrap.js  (3085ms)  (pid 14106)
+Compiled home.js  (447ms)  (pid 14106)
+Compiled application.js  (4491ms)  (pid 14106)
+  Rendered layouts/_navigation.html.erb (2.4ms)
+  Rendered layouts/_messages.html.erb (1.0ms)
+Completed 200 OK in 25788ms (Views: 25294.5ms | ActiveRecord: 6.0ms)

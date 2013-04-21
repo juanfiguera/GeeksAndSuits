@@ -6,25 +6,25 @@
   <div class="span2 well">
     <div class="plan"><h2>Silver</h2></div>
     <ul class="unstyled">
-      <li>One Month Pass</li>
+      <li>One lesson a month</li>
     </ul>
-    <h3>$29/month</h3>
-    <%= link_to 'Subscribe', content_silver_path, :class => 'btn btn-primary' %>
+    <h3>$9/month</h3>
+    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'silver'), :class => 'btn btn-primary' %>
   </div>
   <div class="span2 well featured">
     <div class="plan featured-plan"><h2>Gold</h2></div>
     <ul class="unstyled">
-      <li>3 Month Pass</li>
+      <li>Ten lessons a month</li>
     </ul>
     <h3>$19/month</h3>
-    <%= link_to 'Subscribe', content_gold_path, :class => 'btn btn-primary' %>
+    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'gold'), :class => 'btn btn-primary' %>
   </div>
   <div class="span2 well">
     <div class="plan"><h2>Platinum</h2></div>
     <ul class="unstyled">
-      <li>1 Year Pass</li>
+      <li>Thirty lessons a month</li>
     </ul>
-    <h3>$9/month</h3>
-    <%= link_to 'Subscribe', content_platinum_path, :class => 'btn btn-primary' %>
+    <h3>$29/month</h3>
+    <%= link_to 'Subscribe', new_user_registration_path(:plan => 'platinum'), :class => 'btn btn-primary' %>
   </div>
 </div>

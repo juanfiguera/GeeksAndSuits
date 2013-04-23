@@ -1,2 +1,3 @@
 {"ts":1366580482680,"silentsave":true,"restoring":false,"patch":[[]],"length":0}
 {"contributors":[],"silentsave":false,"ts":1366580492738,"patch":[[{"diffs":[[1,"Stripe.api_key = ENV[\"STRIPE_API_KEY\"]\nSTRIPE_PUBLIC_KEY = ENV[\"STRIPE_PUBLIC_KEY\"]"]],"start1":0,"start2":0,"length1":0,"length2":83}]],"length":83,"saved":false}
+{"contributors":[],"silentsave":false,"ts":1366681661055,"patch":[[{"diffs":[[0,"PUBLIC_KEY\"]"],[1,"\n\nStripeEvent.setup do\n  subscribe 'customer.subscription.deleted' do |event|\n    user = User.find_by_customer_id(event.data.object.customer)\n    user.expire\n  end\nend"]],"start1":71,"start2":71,"length1":12,"length2":179}]],"length":250,"saved":false}

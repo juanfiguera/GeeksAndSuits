@@ -1197,3 +1197,4 @@ Processing by RegistrationsController#edit as HTML
   Rendered layouts/_navigation.html.erb (4.0ms)
   Rendered layouts/_messages.html.erb (0.1ms)
 Completed 200 OK in 824ms (Views: 820.5ms | ActiveRecord: 0.7ms)
+Connecting to database specified by database.yml
